@@ -1,7 +1,7 @@
 require('dotenv').config({ silent: process.env === 'production' });
 
 const devConfig = {
-  dialect: 'postgres',
+  dialect: process.env.DB_DIALECT || 'postgres',
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
   database: process.env.DB_NAME || '',
